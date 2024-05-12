@@ -45,29 +45,72 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
+Here is a Backend Part
+Link for a Frontend Part [DEMO LINK](https://github.com/oksana-kyryienko/login_db_backend)
+This project represents the backend part of an application for users autification management. It is developed using the Nest.js framework and PostgreSQL database.
 
-```bash
-# unit tests
-$ npm run test
+Functionality
+User registration
+User authentication
+Installation and Setup
 
-# e2e tests
-$ npm run test:e2e
+Clone the repository:
 
-# test coverage
-$ npm run test:cov
-```
+git clone https://github.com/oksana-kyryienko/backend_for_autification_react
 
-## Support
+Install dependencies:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+cd backend
+npm install
 
-## Stay in touch
+Run the application:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+npm run start
+The application will be running at http://localhost:4000.
 
-## License
+Usage
+Register a New User
+URL: /users/register
 
-Nest is [MIT licensed](LICENSE).
+Method: POST
+
+Request Body:
+
+json
+
+{
+  "email": "example@example.com",
+  "password": "123456"
+}
+
+User Authentication
+URL: /users/login
+
+Method: POST
+
+Request Body:
+
+json
+
+{
+  "email": "example@example.com",
+  "password": "123456"
+}
+
+Project Structure
+src/: Source code of the application
+user/: User module
+user.controller.ts: Controller to handle HTTP requests
+user.entity.ts: Entity description for user operations with the database
+user.service.ts: Service to perform user operations
+app.module.ts: Main module of the application, which aggregates all other modules
+Database
+The project uses a PostgreSQL database. Connection to the database is configured in the app.module.ts file.
+
+Dependencies
+The project uses the following dependencies:
+
+@nestjs/common: Nest.js framework scaffold
+@nestjs/typeorm: Nest.js integration with TypeORM
+typeorm: ORM for database operations
+pg: PostgreSQL driver for TypeORM
